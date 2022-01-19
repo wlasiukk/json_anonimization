@@ -1,0 +1,14 @@
+{
+   "s": "some string",
+   "i": 123,
+   "d": 123.45,
+   "dt": "11/03/1959",
+   "subJson": "{\"s\": \"some string\", \"i\": 123, \"d\": 123.45, \"dt\": \"11/03/1959\", \"subJson2AsString\": \"{\\\"subjsonString\\\": \\\"value os string in subjson\\\"}\", \"object1\": {\"objectString1\": \"string of object1\", \"objectInt1\": 4567}, \"arr1\": [\"StringValue\", 10, 20.13, true, null], \"arr2\": [{\"1\": 1}, {\"2\": 2}, {\"3\": 3}]}",
+   "subJson2AsString": "{\"subjsonString\": \"value os string in subjson\"}",   
+   "object1": {
+      "objectString1": "string of object1",
+      "objectInt1": 4567
+   },
+   "arr1": [ "StringValue", 10, 20.13, true, null ],
+   "arr2": [{"1":1},{"2":2},{"3":3}]
+}
