@@ -36,10 +36,14 @@ def any_anonymize(p_any):
     if type(p_any)==str:
         if str(p_any).startswith(("{","[")):
             tmp_j = to_json(p_any)
-            if tmp_j is not None:
+            if type(tmp_j)==dict:
                 # looks like json in json - lets anonymize it :)
                 dict_anonymize(tmp_j)
                 return json.dumps(tmp_j)
+            elif type(tmp_j)==list:
+                # looks like json in json - lets anonymize it :)
+                tmp_l = any_anonymize(tmp_j)
+                return json.dumps(tmp_l)
 
         return str_anonymize(p_any)
     elif type(p_any)==int:
@@ -62,7 +66,7 @@ def any_anonymize(p_any):
 
 
 def anonymize_json_file(p_file_name:str) -> dict:
-    with open(p_file_name) as jsonFile:
+    with open(p_file_name, encoding='utf-8') as jsonFile:
         j = json.load(jsonFile)
         dict_anonymize(j)
         return j
